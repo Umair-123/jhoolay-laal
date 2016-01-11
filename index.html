@@ -143,7 +143,7 @@
 					<div>
 						<h2>REGISTER YOUR BUSINESS NOW</h2>
 						<p>Let People Decide Standards</p>
-						<button class="btn btn-reg">REGISTER</button>
+						<button class="btn btn-reg " id="registerBtn">REGISTER</button>
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -285,12 +285,12 @@
             <div class="checkbox">
               <label><input type="checkbox" value="" checked required>Remember me</label>
             </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+              <button id="loginbtn" type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
+          <p>Not a member? <a id="SignupBtn2">Sign Up</a></p>
           <p>Forgot <a class="SignupBtn" >Password?</a></p>
           <div>reviewForm is {{loginForm.$valid}}</div>
         </div>
@@ -304,7 +304,6 @@
 <!-- Modal For Sign Up -->
   <div class="modal fade" id="SignupModal" role="dialog">
     <div class="modal-dialog">
-    
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
@@ -337,14 +336,50 @@
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sign Up</button>
           </form>
         </div>
-        
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+         
+        </div>
       </div>
       
     </div>
   </div>
-  <!-- Modal For Ended --> 
+  <!-- Modal For SignUp Ended --> 
 
+<!-- Modal For Register -->
+  <div class="modal fade" id="registerationModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <h4><span class="glyphicon glyphicon-lock"></span>Register Your Business Here</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" name="loginForm" ng-submit="loginForm.$valid">
+               
+                <h6>Upload Your Brand Picture</h6>
+                <input id="in" type="file" class="text-center center-block well well-sm">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Name </label>
+              <input type="text" class="form-control" id="name" placeholder="Enter Name" required>
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Description</label>
+              <textarea class="form-control" id="des" placeholder="Some words about your Business"></textarea>
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Address </label>
+              <input type="text" class="form-control" id="add" placeholder="Address" required>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Register</button>
+          </form>
+        </div>
 
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal For Registration Ended -->
 
 
 

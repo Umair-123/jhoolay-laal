@@ -42,25 +42,26 @@
 							<p>{{info.Address}}</p>
 						</div>
 						<div class="panel" ng-show="tabo===3">
-							<blockquote ng-repeat="review in product.reviews">
-								<h1> Nothing</h1>
-								<b>Nothing</b>
+							<div class="panel-body" ng-repeat="rev in info.reviews">
+								<p><b>Stars :  </b>{{rev.stars}}</p>
+								<cite><b>Review :</b>{{rev.Comment}}</cite>
 
-							</blockquote>
+							</div>
 							<h2>Submit A Review</h2>
 							
-								<form name="reviewForm" role="form" onload="biz.starfunc()">
+								<form name="reviewForm" role="form" onload="biz.starfunc()" ng-controller="reviewController as reviewCtrl" 
+								ng-submit="reviewCtrl.addReview(rev)">
 
 									<blockquote>
-									<b>{{review.stars}}</b>
-									<p>{{review.Comment}}</p>
+									<b>{{reviewCtrl.review.stars}}</b>
+									<p>{{reviewCtrl.review.Comment}}</p>
 									</blockquote>
 								
-									<input ng-model="review.stars" id="input-id" type="number" class="rating" min=0 max=5 step=0.1 data-size="lg" >
+									<input ng-model="reviewCtrl.review.stars" id="input-id" type="number" class="rating" min=0 max=5 step=0.1 data-size="lg" >
 									<div class="form-group">
 
   										<label for="comment">Comment:</label>
-  										<textarea class="form-control" rows="5" id="review.Comment" ng-model="review.Comment"></textarea>
+  										<textarea class="form-control" rows="5" id="review.Comment" ng-model="reviewCtrl.review.Comment"></textarea>
 									</div>
 									<div class="form-group"><input type="submit" value="Submit Review" class="btn btn-default btn-lg"></div> 
 								</form>
